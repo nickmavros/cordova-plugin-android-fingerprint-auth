@@ -601,6 +601,8 @@ public class FingerprintAuth extends CordovaPlugin {
             if (withFingerprint) {
                 resultJson.put("withFingerprint", true);
                 cryptoObject = result.getCryptoObject();
+
+                Log.d(TAG, "FingerprintAuth::onAuthenticated():  Auth Success with Fingerprint");
             } else {
                 resultJson.put("withBackup", true);
 
@@ -612,6 +614,8 @@ public class FingerprintAuth extends CordovaPlugin {
                 if (initCipher()) {
                     cryptoObject = new FingerprintManager.CryptoObject(mCipher);
                 }
+
+                Log.d(TAG, "FingerprintAuth::onAuthenticated():  Auth Success with Backup");
             }
 
             if (cryptoObject == null) {
@@ -677,7 +681,7 @@ public class FingerprintAuth extends CordovaPlugin {
 
     public static void onError(CharSequence errString) {
         mCallbackContext.error(PluginError.FINGERPRINT_ERROR.name());
-        Log.e(TAG, errString.toString());
+        Log.e(TAG, "FingerprintAuth: " + errString.toString());
     }
 
     public static boolean setPluginResultError(String errorMessage) {

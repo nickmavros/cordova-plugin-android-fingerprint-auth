@@ -198,6 +198,7 @@ public class FingerprintAuthenticationDialogFragment extends DialogFragment
                 .getIdentifier("cancel", "string", FingerprintAuth.packageName);
         switch (mStage) {
             case FINGERPRINT:
+                Log.d(TAG, "FingerprintAuthenticationDialogFragment::updateStage():  FINGERPRINT");
                 mCancelButton.setText(cancel_id);
                 int use_backup_id = getResources()
                         .getIdentifier("use_backup", "string", FingerprintAuth.packageName);
@@ -207,10 +208,13 @@ public class FingerprintAuthenticationDialogFragment extends DialogFragment
             case NEW_FINGERPRINT_ENROLLED:
                 // Intentional fall through
             case BACKUP:
+                Log.d(TAG, "FingerprintAuthenticationDialogFragment::updateStage():  BACKUP");
+
                 if (mStage == Stage.NEW_FINGERPRINT_ENROLLED) {
 
                 }
                 if (!mKeyguardManager.isKeyguardSecure()) {
+                    Log.d(TAG, "FingerprintAuthenticationDialogFragment::updateStage():  Keyguard is Secure");
                     // Show a message that the user hasn't set up a lock screen.
                     int secure_lock_screen_required_id = getResources()
                             .getIdentifier("secure_lock_screen_required", "string",
@@ -219,6 +223,8 @@ public class FingerprintAuthenticationDialogFragment extends DialogFragment
                             getString(secure_lock_screen_required_id),
                             Toast.LENGTH_LONG).show();
                     return;
+                } else {
+                    Log.d(TAG, "FingerprintAuthenticationDialogFragment::updateStage():  Keyguard is not Secure");
                 }
                 if (FingerprintAuth.mDisableBackup) {
                     FingerprintAuth.onError("backup disabled");
@@ -230,12 +236,14 @@ public class FingerprintAuthenticationDialogFragment extends DialogFragment
     }
 
     private void showAuthenticationScreen() {
+        Log.d(TAG, "FingerprintAuthenticationDialogFragment::showAuthenticationScreen():  Showing auth screen entered");
+
         // Create the Confirm Credentials screen. You can customize the title and description. Or
         // we will provide a generic one for you if you leave it null
         Intent intent = mKeyguardManager.createConfirmDeviceCredentialIntent(null, null);
         if (intent != null) {
+            Log.d(TAG, "FingerprintAuthenticationDialogFragment::showAuthenticationScreen():  Device cred window created");
             startActivityForResult(intent, REQUEST_CODE_CONFIRM_DEVICE_CREDENTIALS);
-            dismissAllowingStateLoss();
         }
     }
 
