@@ -235,6 +235,7 @@ public class FingerprintAuthenticationDialogFragment extends DialogFragment
         Intent intent = mKeyguardManager.createConfirmDeviceCredentialIntent(null, null);
         if (intent != null) {
             startActivityForResult(intent, REQUEST_CODE_CONFIRM_DEVICE_CREDENTIALS);
+            dismissAllowingStateLoss();
         }
     }
 
@@ -270,7 +271,6 @@ public class FingerprintAuthenticationDialogFragment extends DialogFragment
         } else {
             FingerprintAuth.onError(errString);
             dismissAllowingStateLoss();
-
         }
     }
 
