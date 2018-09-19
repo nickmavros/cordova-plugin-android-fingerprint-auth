@@ -594,7 +594,7 @@ public class FingerprintAuth extends CordovaPlugin {
         String errorMessage = "";
         boolean createdResultJson = false;
 
-        //try {
+        try {
             //byte[] bytes;
            // FingerprintManager.CryptoObject cryptoObject = null;
 
@@ -659,22 +659,22 @@ public class FingerprintAuth extends CordovaPlugin {
                 
                 createdResultJson = true;
         } 
-        
-        } catch (BadPaddingException e) {
-            Log.e(TAG, "Failed to encrypt the data with the generated key:"
-                    + " BadPaddingException:  " + e.toString());
-            errorMessage = PluginError.BAD_PADDING_EXCEPTION.name();
-        } catch (IllegalBlockSizeException e) {
-            Log.e(TAG, "Failed to encrypt the data with the generated key: "
-                    + "IllegalBlockSizeException: " + e.toString());
-            errorMessage = PluginError.ILLEGAL_BLOCK_SIZE_EXCEPTION.name();
+        */
+        //} catch (BadPaddingException e) {
+        //    Log.e(TAG, "Failed to encrypt the data with the generated key:"
+        //            + " BadPaddingException:  " + e.toString());
+        //    errorMessage = PluginError.BAD_PADDING_EXCEPTION.name();
+        //} catch (IllegalBlockSizeException e) {
+        //    Log.e(TAG, "Failed to encrypt the data with the generated key: "
+        //            + "IllegalBlockSizeException: " + e.toString());
+        //    errorMessage = PluginError.ILLEGAL_BLOCK_SIZE_EXCEPTION.name();
         } catch (JSONException e) {
             Log.e(TAG, "Failed to set resultJson key value pair: " + e.toString());
             errorMessage = PluginError.JSON_EXCEPTION.name();
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+        //} catch (UnsupportedEncodingException e) {
+        //    e.printStackTrace();
         }
-*/
+
 
         if (createdResultJson) {
             mCallbackContext.success(resultJson);
