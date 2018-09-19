@@ -594,9 +594,9 @@ public class FingerprintAuth extends CordovaPlugin {
         String errorMessage = "";
         boolean createdResultJson = false;
 
-        try {
-            byte[] bytes;
-            FingerprintManager.CryptoObject cryptoObject = null;
+        //try {
+            //byte[] bytes;
+           // FingerprintManager.CryptoObject cryptoObject = null;
 
             if (withFingerprint) {
                 resultJson.put("withFingerprint", true);
@@ -659,7 +659,7 @@ public class FingerprintAuth extends CordovaPlugin {
                 
                 createdResultJson = true;
         } 
-        */
+        
         } catch (BadPaddingException e) {
             Log.e(TAG, "Failed to encrypt the data with the generated key:"
                     + " BadPaddingException:  " + e.toString());
@@ -674,6 +674,7 @@ public class FingerprintAuth extends CordovaPlugin {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+*/
 
         if (createdResultJson) {
             mCallbackContext.success(resultJson);
