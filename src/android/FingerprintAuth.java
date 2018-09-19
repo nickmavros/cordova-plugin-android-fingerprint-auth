@@ -600,24 +600,32 @@ public class FingerprintAuth extends CordovaPlugin {
 
             if (withFingerprint) {
                 resultJson.put("withFingerprint", true);
-                cryptoObject = result.getCryptoObject();
+                //cryptoObject = result.getCryptoObject();
 
                 Log.d(TAG, "FingerprintAuth::onAuthenticated():  Auth Success with Fingerprint");
             } else {
                 resultJson.put("withBackup", true);
 
                 // If failed to init cipher because of InvalidKeyException, create new key
-                if (!initCipher()) {
-                    createKey();
-                }
+                //if (!initCipher()) {
+                //    createKey();
+                //}
 
-                if (initCipher()) {
-                    cryptoObject = new FingerprintManager.CryptoObject(mCipher);
-                }
+                //if (initCipher()) {
+                //    cryptoObject = new FingerprintManager.CryptoObject(mCipher);
+                //}
 
                 Log.d(TAG, "FingerprintAuth::onAuthenticated():  Auth Success with Backup");
             }
 
+            createdResultJson = true;
+
+            /* So we don't actually put anything into the device via the CryptoObj below,
+             * instead, we want to just ask Android if the fingerprint is valid or not
+             * which matched iOS as there is a secondary secure storage that we use to
+             * handle the storage of other data. -SJ
+             */ 
+            /*
             if (cryptoObject == null) {
                 errorMessage = PluginError.INIT_CIPHER_FAILED.name();
             } else {
@@ -648,8 +656,10 @@ public class FingerprintAuth extends CordovaPlugin {
                         }
                     }
                 }
+                
                 createdResultJson = true;
-            }
+        } 
+        */
         } catch (BadPaddingException e) {
             Log.e(TAG, "Failed to encrypt the data with the generated key:"
                     + " BadPaddingException:  " + e.toString());
