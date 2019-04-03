@@ -23,7 +23,7 @@
     <string name="fingerprint_hint">Czujnik dotyku</string>
     <string name="fingerprint_not_recognized">Odcisk palca nie został rozpoznany. Spróbuj ponownie.</string>
     <string name="fingerprint_success">Rozpoznano odcisk palca</string>
-    <string name="new_fingerprint_enrolled_description">A new fingerprint was added to this device, so your password is required.</string>
+    <string name="new_fingerprint_enrolled_description">Do tego urządzenia dodano nowy odcisk palca, więc wymagane jest hasło.</string>
     <string name="secure_lock_screen_required">Wymagany bezpieczny ekran blokady!</string>
     <string name="fingerprint_too_many_attempts">Zbyt wiele prób. Spróbuj ponownie później.</string>
 </resources>

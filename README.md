@@ -32,7 +32,7 @@ This plugin will only work on devices whose manufacturers have implemented the A
 If you are not concerned with encrypting credentials and just want device authentication (fingerprint or backup), just call `encrypt()` with a `clientId` and look for a callback to the `successCallback`.
 
 ### Encrypt/Decrypt User Credentials
- 
+
 * Encrypt user credentials
     * Have user sign in with username and password.
     * Check plugin availability and pass username and password to `encrypt()`.
@@ -52,7 +52,7 @@ If you are not concerned with encrypting credentials and just want device authen
 * FingerprintAuth
     * [isAvailable(isAvailableSuccess, isAvailableError)](#module_fingerprintauth.isAvailable)
     * [encrypt(encryptConfig, successCallback, errorCallback)](#module_fingerprintauth.encrypt)
-    * [decrypt(decryptConfig, successCallback, errorCallback)](#module_fingerprintauth.decrypt)  
+    * [decrypt(decryptConfig, successCallback, errorCallback)](#module_fingerprintauth.decrypt)
     * [delete(deleteConfg, successCallback, errorCallback)](#module_fingerprintauth.delete)
     * [ERRORS](#module_fingerprintauth.errors)
 * [Config Object](#module_fingerprintauth.config)
@@ -108,7 +108,7 @@ function isAvailableError(message) {
 | token | String | undefined | Data to be decrypted. ***Required*** for `decrypt()`. |
 | disableBackup | boolean | false | Set to true to remove the "USE BACKUP" button |
 | maxAttempts | number | 5 | The device max is 5 attempts.  Set this parameter if you want to allow fewer than 5 attempts.  |
-| locale | String | "en_US" | Change the language displayed on the authentication dialog.<br/><ul><li>English: "en_US"</li><li>Italian: "it"</li><li>Spanish: "es"</li><li>Russian: "ru"</li><li>French: "fr"</li><li>Chinese (Simplified): <ul><li>"zh_CN"</li><li>"zh_SG"</li></ul></li><li>Chinese (Traditional): <ul><li>"zh"</li><li>"zh_HK"</li><li>"zh_TW"</li><li>"zh_MO"</li></ul></li><li>Norwegian: "no"</li><li>Portuguese: "pt"</li><li>Japanese: "ja"</li><li>German: "de"</li><li>Thai: "th"</li><li>Arabic: "ar"</li></ul> |
+| locale | String | "en_US" | Change the language displayed on the authentication dialog.<br/><ul><li>English: "en_US"</li><li>Italian: "it"</li><li>Spanish: "es"</li><li>Russian: "ru"</li><li>French: "fr"</li><li>Chinese (Simplified): <ul><li>"zh_CN"</li><li>"zh_SG"</li></ul></li><li>Chinese (Traditional): <ul><li>"zh"</li><li>"zh_HK"</li><li>"zh_TW"</li><li>"zh_MO"</li></ul></li><li>Norwegian: "no"</li><li>Polish: "pl"</li><li>Portuguese: "pt"</li><li>Japanese: "ja"</li><li>German: "de"</li><li>Thai: "th"</li><li>Arabic: "ar"</li></ul> |
 | userAuthRequired | boolean | false | Require the user to authenticate with a fingerprint to authorize every use of the key.  New fingerprint enrollment will invalidate key and require backup authenticate to re-enable the fingerprint authentication dialog. |
 | encryptNoAuth | boolean | undefined | Bypass authentication and just encrypt input.  If `true` this option will not display the authentication dialog for fingerprint or backup credentials.  It will just encrypt the input and return a token. |
 | dialogTitle | String | undefined | Set the title of the fingerprint authentication dialog. |
@@ -127,7 +127,7 @@ function isAvailableError(message) {
 | withBackup | boolean | User authenticated using backup credentials. |
 | token | String | Will contain the base64 encoded credentials upon successful fingerprint authentication. |
 
-**Example**  
+**Example**
 
 ```javascript
 var encryptConfig = {
@@ -143,7 +143,7 @@ function successCallback(result) {
     console.log("successCallback(): " + JSON.stringify(result));
     if (result.withFingerprint) {
         console.log("Successfully encrypted credentials.");
-        console.log("Encrypted credentials: " + result.token);  
+        console.log("Encrypted credentials: " + result.token);
     } else if (result.withBackup) {
         console.log("Authenticated with backup password");
     }
@@ -170,7 +170,7 @@ function errorCallback(error) {
 | withBackup | boolean | User authenticated using  backup credentials. |
 | password | String | Will contain the decrypted password upon successful fingerprint authentication.
 
-**Example**  
+**Example**
 
 ```javascript
 var decryptConfig = {
@@ -187,7 +187,7 @@ function successCallback(result) {
         console.log("Successful biometric authentication.");
         if (result.password) {
             console.log("Successfully decrypted credential token.");
-            console.log("password: " + result.password);  
+            console.log("password: " + result.password);
         }
     } else if (result.withBackup) {
         console.log("Authenticated with backup password");
