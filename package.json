@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-android-fingerprint-auth",
-  "version": "1.4.4",
+  "version": "1.6.0",
   "description": "Cordova plugin to use Android fingerprint authentication API",
   "cordova": {
     "id": "cordova-plugin-android-fingerprint-auth",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mjwheatley/cordova-plugin-android-fingerprint-auth.git"
+    "url": "git+https://github.com/nickmavros/cordova-plugin-android-fingerprint-auth.git"
   },
   "keywords": [
     "cordova",
@@ -24,7 +24,7 @@
   "author": "Matthew Wheatley",
   "license": "Apache 2.0",
   "bugs": {
-    "url": "https://github.com/mjwheatley/cordova-plugin-android-fingerprint-auth/issues"
+    "url": "https://github.com/nickmavros/cordova-plugin-android-fingerprint-auth/issues"
   },
-  "homepage": "https://github.com/mjwheatley/cordova-plugin-android-fingerprint-auth#readme"
+  "homepage": "https://github.com/nickmavros/cordova-plugin-android-fingerprint-auth#readme"
 }

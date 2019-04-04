@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="cordova-plugin-android-fingerprint-auth"
-        version="1.4.4">
+        version="1.6.0">
     <name>FingerprintAuth</name>
     <description>Cordova plugin to use Android fingerprint authentication API</description>
     <license>Apache 2.0</license>
@@ -51,6 +51,7 @@
         <resource-file src="res/android/values-zh-rSG" target="res/values-zh-rSG" />
         <resource-file src="res/android/values-zh-rTW" target="res/values-zh-rTW" />
         <resource-file src="res/android/values-no" target="res/values-no" />
+        <resource-file src="res/android/values-pl" target="res/values-pl" />
         <resource-file src="res/android/values-pt" target="res/values-pt" />
         <resource-file src="res/android/values-ja" target="res/values-ja" />
         <resource-file src="res/android/values-de" target="res/values-de" />

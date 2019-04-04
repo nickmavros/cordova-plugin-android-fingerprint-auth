@@ -1,3 +1,8 @@
+# Version 1.6.0
+### What's New
+* Forked from `ucswift/cordova-plugin-android-fingerprint-auth`
+* Added Polish translations
+
 # Version 1.4.4
 ### What's New
 * Added Arabic translations
@@ -9,7 +14,6 @@
 ### What's New
 * Added Thai translations
     * merged pull request #102
-
 
 # Version 1.4.2
 ### What's New
@@ -141,7 +145,7 @@ Introducing encryption and decryption of user credentials.
 | withBackup | boolean | `true` if user used the backup credentials activity to authenticate. |
 | cipherMode | FingerprintAuth.CipherMode | Pass through parameter from config object. |
 | token | String | Will contain the base64 encoded credentials if `withFingerprint == true` and `cipherMode == FingerprintAuth.CipherMode.ENCRYPT`. |
-| password | String | Will contain the decrypted password if `withFingerprint == true` and `cipherMode == FingerprintAuth.CipherMode.DECRYPT` 
+| password | String | Will contain the decrypted password if `withFingerprint == true` and `cipherMode == FingerprintAuth.CipherMode.DECRYPT`
 
 * **New method FingerprintAuth.delete() to delete the cipher used to encrypt/decrypt user credentials.**
 
